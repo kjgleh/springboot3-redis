@@ -1,4 +1,4 @@
-package com.example.springboot3redis.user
+package com.example.springboot3redis.hash
 
 import java.util.*
 import org.springframework.data.repository.findByIdOrNull
@@ -25,6 +25,11 @@ class UserController(
         return userRepository.findByIdOrNull(id)
     }
 
+    @GetMapping("/users")
+    fun findAll(): Iterable<User> {
+        return userRepository.findAll()
+    }
+
     @PutMapping("/users/{id}")
     fun update(@RequestBody user: User) {
         userRepository.save(user)
@@ -33,5 +38,10 @@ class UserController(
     @DeleteMapping("/users/{id}")
     fun delete(@PathVariable id: String) {
         userRepository.deleteById(id)
+    }
+
+    @DeleteMapping("/users")
+    fun deleteAll() {
+        userRepository.deleteAll()
     }
 }

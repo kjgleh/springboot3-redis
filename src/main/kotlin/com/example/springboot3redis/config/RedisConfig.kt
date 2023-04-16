@@ -21,7 +21,7 @@ class RedisConfig {
     }
 
     @Bean
-    fun hashRedisTemplate(redisConnectionFactory: RedisConnectionFactory): RedisTemplate<*, *> {
+    fun redisTemplate(redisConnectionFactory: RedisConnectionFactory): RedisTemplate<*, *> {
         return RedisTemplate<String, Any>().apply {
             this.setConnectionFactory(redisConnectionFactory)
         }

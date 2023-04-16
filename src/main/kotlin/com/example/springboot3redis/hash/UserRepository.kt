@@ -1,4 +1,4 @@
-package com.example.springboot3redis.user
+package com.example.springboot3redis.hash
 
 import org.springframework.data.repository.CrudRepository
 
