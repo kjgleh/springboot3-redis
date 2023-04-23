@@ -20,6 +20,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // RedisLockRegistry 를 사용하기 위해 필요함
+    implementation("org.springframework.integration:spring-integration-redis")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
